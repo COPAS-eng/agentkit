@@ -13,7 +13,7 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2 font-bold text-xl tracking-tight"
         >
-          <span className="rounded-md border border-stone-200 px-1.5 py-0.5 text-sm font-mono">agentkit</span>
+          <span className="rounded-md border border-stone-700 px-1.5 py-0.5 text-sm font-mono text-stone-300">agentkit</span>
           <span className="font-semibold">Kit</span>
         </Link>
 

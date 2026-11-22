@@ -44,7 +44,7 @@ export function AgentInstallInstructions({
         {status === 'incompatible' ? (
           <>
             <p className="text-amber-800">{t('incompatible')}: este recurso não declara compatibilidade com {name}.</p>
-            <p className="mt-1 text-xs text-stone-600">
+            <p className="mt-1 text-xs text-stone-400">
               Ainda assim, você pode copiar as instruções abaixo e tentar configurar manualmente.
             </p>
           </>
@@ -53,8 +53,8 @@ export function AgentInstallInstructions({
             <p className="font-medium mb-1">{resource.instructions}</p>
             {resource.dependencies.length > 0 && (
               <div className="mt-2">
-                <p className="text-xs font-medium text-stone-600">{t('dependencies')}:</p>
-                <ul className="list-disc list-inside text-xs text-stone-600 mt-0.5">
+                <p className="text-xs font-medium text-stone-400">{t('dependencies')}:</p>
+                <ul className="list-disc list-inside text-xs text-stone-400 mt-0.5">
                   {resource.dependencies.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -63,8 +63,8 @@ export function AgentInstallInstructions({
             )}
             {resource.permissions.length > 0 && (
               <div className="mt-2">
-                <p className="text-xs font-medium text-stone-600">{t('permissions')}:</p>
-                <ul className="list-disc list-inside text-xs text-stone-600 mt-0.5">
+                <p className="text-xs font-medium text-stone-400">{t('permissions')}:</p>
+                <ul className="list-disc list-inside text-xs text-stone-400 mt-0.5">
                   {resource.permissions.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
@@ -127,7 +127,7 @@ export function AgentSelector({
                   ? 'text-green-700'
                   : status === 'incompatible'
                     ? 'text-amber-700'
-                    : 'text-stone-500'
+                    : 'text-stone-400'
               }`}>
                 {status === 'compatible' ? t('compatible') : status === 'incompatible' ? t('incompatible') : t('compatibilityNotVerified')}
               </span>

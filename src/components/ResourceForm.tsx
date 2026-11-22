@@ -237,7 +237,7 @@ export function ResourceForm({ resource }: { resource?: Resource }) {
 
           <div className="col-span-2">
             <label className="block text-sm font-medium mb-1">{t('compatibleWith')}</label>
-            <p className="text-xs text-stone-500 mb-1">Selecione os agentes compatíveis.</p>
+            <p className="text-xs text-stone-400 mb-1">Selecione os agentes compatíveis.</p>
             <div className="flex flex-wrap gap-2">
               {['claude-code', 'opencode', 'hermes', 'cursor', 'antigravity', 'generic'].map((id) => {
                 const selected = form.compatibleAgents?.includes(id)
@@ -254,7 +254,7 @@ export function ResourceForm({ resource }: { resource?: Resource }) {
                             : (form.compatibleAgents || []).filter((a) => a !== id)
                         )
                       }
-                      className="rounded border-stone-300 text-primary focus:ring-ring"
+                      className="rounded border-stone-600 text-primary focus:ring-ring"
                     />
                     {id === 'claude-code' ? 'Claude Code' : id === 'opencode' ? 'OpenCode' : id === 'hermes' ? 'Hermes' : id === 'cursor' ? 'Cursor' : id === 'antigravity' ? 'Antigravity' : 'Genérico'}
                   </label>
@@ -270,11 +270,11 @@ export function ResourceForm({ resource }: { resource?: Resource }) {
               type="checkbox"
               checked={demo}
               onChange={(e) => setDemo(e.target.checked)}
-              className="rounded border-stone-300 text-amber-600 focus:ring-ring"
+              className="rounded border-stone-600 text-amber-600 focus:ring-ring"
             />
             {t('demoContent')}
           </label>
-          <p className="text-xs text-stone-500 ml-2">
+          <p className="text-xs text-stone-400 ml-2">
             Marque se este é um conteúdo de demonstração (exemplo, não um recurso verificado).
           </p>
         </div>

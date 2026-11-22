@@ -49,7 +49,7 @@ export default function CatalogPage() {
     <section className="px-4 py-6 lg:px-6 max-w-7xl mx-auto">
       <header className="mb-8">
         <h1 className="text-2xl font-bold">{t('appName')}</h1>
-        <p className="mt-1 text-sm text-stone-600">{t('tagline')}</p>
+        <p className="mt-1 text-sm text-stone-400">{t('tagline')}</p>
       </header>
 
       <Filters

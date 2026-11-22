@@ -46,7 +46,7 @@ export function ResourceDetail({ resource }: { resource: Resource }) {
         <div className="flex flex-col lg:flex-row lg:items-start gap-6">
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="inline-flex items-center rounded-md border border-stone-200 px-2.5 py-0.5 text-xs font-medium text-stone-600">
+              <span className="inline-flex items-center rounded-md border border-stone-700 px-2.5 py-0.5 text-xs font-medium text-stone-400">
                 {resource.type === 'skill' ? t('typeSkill') : resource.type === 'mcp' ? t('typeMcp') : t('typePrompt')}
               </span>
               {resource.demo && (
@@ -57,18 +57,18 @@ export function ResourceDetail({ resource }: { resource: Resource }) {
             </div>
 
             <h1 className="text-2xl font-bold tracking-tight mb-1">{resource.title}</h1>
-            <p className="text-sm text-stone-500 mb-4">
+            <p className="text-sm text-stone-400 mb-4">
               {t('by')} {resource.author} · {t('version')} {resource.version} · {t('category')}: {resource.category}
             </p>
 
-            <p className="text-stone-700 leading-relaxed mb-5">{resource.description}</p>
+            <p className="text-stone-300 leading-relaxed mb-5">{resource.description}</p>
 
             <div className="space-y-3">
               <div className="rounded-lg border border-input p-4">
                 <h3 className="text-sm font-semibold mb-2">{t('tags')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {resource.tags.map((tag) => (
-                    <span key={tag} className="rounded-md border border-input bg-stone-50 px-2.5 py-0.5 text-xs text-stone-600">
+                    <span key={tag} className="rounded-md border border-input bg-stone-800 px-2.5 py-0.5 text-xs text-stone-400">
                       {tag}
                     </span>
                   ))}
@@ -77,7 +77,7 @@ export function ResourceDetail({ resource }: { resource: Resource }) {
 
               <div className="rounded-lg border border-input p-4">
                 <h3 className="text-sm font-semibold mb-2">{t('compatibleWith')}</h3>
-                <p className="text-sm text-stone-600">
+                <p className="text-sm text-stone-400">
                   {resource.compatibleAgents.map((a) => a).join(', ') || '—'}
                 </p>
               </div>
@@ -85,7 +85,7 @@ export function ResourceDetail({ resource }: { resource: Resource }) {
               {resource.dependencies.length > 0 && (
                 <div className="rounded-lg border border-input p-4">
                   <h3 className="text-sm font-semibold mb-2">{t('dependencies')}</h3>
-                  <ul className="list-disc list-inside text-sm text-stone-600">
+                  <ul className="list-disc list-inside text-sm text-stone-400">
                     {resource.dependencies.map((d) => (
                       <li key={d}>{d}</li>
                     ))}
@@ -109,7 +109,7 @@ export function ResourceDetail({ resource }: { resource: Resource }) {
           <aside className="w-full lg:w-72 flex-shrink-0">
             <div className="rounded-lg border border-input p-4">
               <h3 className="text-sm font-semibold mb-2">{t('lastUpdated')}</h3>
-              <p className="text-sm text-stone-600 mb-4">
+              <p className="text-sm text-stone-400 mb-4">
                 {new Date(resource.lastUpdated).toLocaleDateString()}
               </p>
 
@@ -164,14 +164,14 @@ export function ResourceDetail({ resource }: { resource: Resource }) {
 
         <div className="mt-8">
           <h2 className="text-lg font-semibold mb-3">{t('instructions')}</h2>
-          <div className="rounded-lg border border-input p-5 text-sm font-mono text-stone-700">
+          <div className="rounded-lg border border-input p-5 text-sm font-mono text-stone-300">
             {resource.instructions}
           </div>
         </div>
 
         <div className="mt-8">
           <h2 className="text-lg font-semibold mb-3">{t('addToAgent')}</h2>
-          <p className="text-sm text-stone-600 mb-3">
+          <p className="text-sm text-stone-400 mb-3">
             Selecione o agente para ver instruções de instalação adequadas ao destino.
           </p>
           <AgentSelector resource={resource} selected={selectedAgent} onSelect={setSelectedAgent} />
@@ -180,7 +180,7 @@ export function ResourceDetail({ resource }: { resource: Resource }) {
 
         <div className="mt-8 rounded-lg border border-input p-5">
           <h3 className="text-sm font-semibold mb-2">{t('warningTitle')}</h3>
-          <ul className="list-disc list-inside text-sm text-stone-600 space-y-1">
+          <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
             <li>{t('warningUntrusted')}</li>
             {resource.permissions.length > 0 && <li>{t('warningSensitive')}</li>}
             <li>{t('noSecrets')}</li>

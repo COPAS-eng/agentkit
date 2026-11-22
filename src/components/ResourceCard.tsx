@@ -12,7 +12,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
     >
       <div className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex items-center rounded-md border border-stone-200 px-2 py-0.5 text-xs font-medium text-stone-600">
+          <span className="inline-flex items-center rounded-md border border-stone-700 px-2 py-0.5 text-xs font-medium text-stone-400">
             {resource.type === 'skill' ? t('typeSkill') : resource.type === 'mcp' ? t('typeMcp') : t('typePrompt')}
           </span>
           {resource.demo && (
@@ -26,9 +26,9 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </Link>
 
-        <p className="line-clamp-2 text-sm text-stone-600">{resource.shortDescription}</p>
+        <p className="line-clamp-2 text-sm text-stone-400">{resource.shortDescription}</p>
 
-        <div className="mt-3 flex items-center gap-3 text-xs text-stone-500">
+        <div className="mt-3 flex items-center gap-3 text-xs text-stone-400">
           <span>{t('author')}: <span className="font-medium">{resource.author}</span></span>
           <span aria-hidden="true">·</span>
           <span>{t('version')}: {resource.version}</span>
