@@ -12,6 +12,7 @@ describe('store', () => {
     const resources = getResources()
     expect(resources.length).toBeGreaterThan(0)
     expect(resources.every((r) => r.demo)).toBe(true)
+    expect(resources.some((r) => r.id.startsWith('seed-'))).toBe(true)
   })
 
   it('adds and deletes a resource', () => {

@@ -1,4 +1,7 @@
 import type { Resource, Collection, HistoryEntry, FilterState } from './types'
+import { SEED_RESOURCES } from './seed-data'
+import { MARKETPLACE_RESOURCES } from './seed-marketplace'
+import { GITHUB_RESOURCES } from './seed-github'
 
 const RESOURCES_KEY = 'agentkit:resources'
 const COLLECTIONS_KEY = 'agentkit:collections'
@@ -92,8 +95,14 @@ function save<T>(key: string, value: T) {
 export function getResources(): Resource[] {
   const stored = load<Resource[]>(RESOURCES_KEY, [])
   if (stored && stored.length > 0) return stored
-  save(RESOURCES_KEY, DEMO_RESOURCES)
-  return DEMO_RESOURCES
+  const seeds = [
+    ...DEMO_RESOURCES,
+    ...(SEED_RESOURCES as Resource[]),
+    ...(MARKETPLACE_RESOURCES as Resource[]),
+    ...(GITHUB_RESOURCES as Resource[]),
+  ]
+  save(RESOURCES_KEY, seeds)
+  return seeds
 }
 
 export function setResources(resources: Resource[]) {

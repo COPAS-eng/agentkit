@@ -9,7 +9,9 @@ describe('catalog page', () => {
     expect(screen.getByText('AgentKit')).toBeInTheDocument()
     const resources = getResources()
     resources.forEach((r) => {
-      expect(screen.getByText(r.title)).toBeInTheDocument()
+      expect(
+        screen.getByText(r.title, { selector: 'a' })
+      ).toBeInTheDocument()
     })
   })
 
@@ -21,6 +23,8 @@ describe('catalog page', () => {
 
     const typeSelect = screen.getByLabelText('Tipo')
     fireEvent.change(typeSelect, { target: { value: 'skill' } })
-    skills.forEach((r) => expect(screen.getByText(r.title)).toBeInTheDocument())
+    skills.forEach((r) =>
+      expect(screen.getByText(r.title, { selector: 'a' })).toBeInTheDocument()
+    )
   })
 })
